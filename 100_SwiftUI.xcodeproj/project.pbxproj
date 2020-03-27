@@ -14,6 +14,7 @@
 		4495E42E242D24680042D3C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4495E42D242D24680042D3C8 /* Preview Assets.xcassets */; };
 		4495E431242D24680042D3C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4495E42F242D24680042D3C8 /* LaunchScreen.storyboard */; };
 		4495E439242D7E710042D3C8 /* WeSplit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495E438242D7E710042D3C8 /* WeSplit.swift */; };
+		4495E43B242DADE50042D3C8 /* ChooseTheFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495E43A242DADE50042D3C8 /* ChooseTheFlag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4495E430242D24680042D3C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4495E432242D24680042D3C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4495E438242D7E710042D3C8 /* WeSplit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeSplit.swift; sourceTree = "<group>"; };
+		4495E43A242DADE50042D3C8 /* ChooseTheFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTheFlag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				4495E426242D24630042D3C8 /* SceneDelegate.swift */,
 				4495E428242D24630042D3C8 /* ContentView.swift */,
 				4495E438242D7E710042D3C8 /* WeSplit.swift */,
+				4495E43A242DADE50042D3C8 /* ChooseTheFlag.swift */,
 				4495E42A242D24680042D3C8 /* Assets.xcassets */,
 				4495E42F242D24680042D3C8 /* LaunchScreen.storyboard */,
 				4495E432242D24680042D3C8 /* Info.plist */,
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4495E43B242DADE50042D3C8 /* ChooseTheFlag.swift in Sources */,
 				4495E439242D7E710042D3C8 /* WeSplit.swift in Sources */,
 				4495E425242D24630042D3C8 /* AppDelegate.swift in Sources */,
 				4495E427242D24630042D3C8 /* SceneDelegate.swift in Sources */,
