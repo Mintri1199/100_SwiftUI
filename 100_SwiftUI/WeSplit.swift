@@ -10,17 +10,20 @@ import SwiftUI
 
 struct WeSplitView: View {
   @State private var checkAmount = ""
-  @State private var numberOfPeople = 2
+  @State private var numberOfPeople = "2"
   @State private var tipPercentage = 2
   let tipPercentages = [10, 15, 20, 25, 0]
   
-  var totalPerPerson: Double {
-    let peopleCount = Double(numberOfPeople + 2)
+  var grandTotal: Double {
     let tipSelection = Double(tipPercentages[tipPercentage])
-    
     let orderAmount = Double(checkAmount) ?? 0
     let tipValue = orderAmount / 100 * tipSelection
-    return (orderAmount + tipValue) / peopleCount
+    return orderAmount + tipValue
+  }
+  
+  var totalPerPerson: Double {
+    let peopleCount = Double(numberOfPeople) ?? 0
+    return grandTotal / (peopleCount + 2)
   }
   
   var body: some View {
@@ -30,11 +33,8 @@ struct WeSplitView: View {
           TextField("Amount", text: $checkAmount)
             .keyboardType(.decimalPad)
           
-          Picker("Number of people", selection: $numberOfPeople) {
-            ForEach(2 ..< 100) {
-              Text("\($0) people")
-            }
-          }
+          TextField("\(numberOfPeople) people", text: $numberOfPeople)
+            .keyboardType(.numberPad)
         }
         
         Section(header: Text("How much tip do you want to leave?")) {
@@ -46,11 +46,15 @@ struct WeSplitView: View {
           .pickerStyle(SegmentedPickerStyle())
         }
         
-        Section(header: Text("Tip Amount Per Person")) {
+        Section(header: Text("Amount Per Person")) {
           Text("$\(totalPerPerson, specifier: "%.2f")")
         }
+        
+        Section(header: Text("Grand Total")) {
+          Text("$\(grandTotal, specifier: "%.2f")")
+        }
+        .navigationBarTitle("WeSplit")
       }
-      .navigationBarTitle("WeSplit")
     }
   }
 }
