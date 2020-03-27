@@ -13,46 +13,64 @@ struct ChooseTheFlag: View {
   @State private var correctAnswer = Int.random(in: 0...2)
   @State private var showingScore = false
   @State private var scoreTitle = ""
+  @State private var selectedAnswer = 0
+  @State private var userScore = 0
+  @State private var correct = false
   var body: some View {
     ZStack {
       LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
-      .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.all)
       
       VStack(spacing: 30) {
         VStack {
           Text("Tap the flag of")
             .foregroundColor(.white)
+          
           Text(countries[correctAnswer])
             .foregroundColor(.white)
             .font(.largeTitle)
             .fontWeight(.black)
         }
         
-        ForEach(0..<3) { number in
+        ForEach(0 ..< 3) { number in
           Button(action: {
+            self.selectedAnswer = number
             self.flagTapped(number)
           }) {
             Image(self.countries[number])
               .renderingMode(.original)
               .clipShape(Capsule())
               .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-              .shadow(color: Color.black, radius: 2)
+              .shadow(color: .black, radius: 2)
           }
+          
         }
+        
+        Text("Score: \(userScore)")
+        .foregroundColor(.white)
+        .font(.largeTitle)
+        .fontWeight(.black)
         Spacer()
       }
-    }
-    .alert(isPresented: $showingScore) { () -> Alert in
-      Alert(title: Text(scoreTitle), message: Text("Your score is ???"), dismissButton: .default(Text("Continuee")))
+    }.alert(isPresented: self.$showingScore) {
+      Alert(title: Text(self.scoreTitle), message: Text("That was the flag of \(countries[selectedAnswer])"), dismissButton: .default(Text("Continue")) {
+        self.askQuestion()
+        })
     }
   }
   
   func flagTapped(_ number: Int) {
     if number == correctAnswer {
       scoreTitle = "Correct"
+      userScore += 1
+      correct = true
     } else {
-     scoreTitle = "Wrong"
+      scoreTitle = "Wrong"
+      userScore -= 1
+      correct = false
     }
+    showingScore = true
+    
   }
   
   func askQuestion() {
