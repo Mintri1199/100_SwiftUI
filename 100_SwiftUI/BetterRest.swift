@@ -13,7 +13,9 @@ struct BetterRest: View {
   @State private var wakeUp = defaultWakeTime
   @State private var sleepAmount = 8.0
   @State private var coffeeAmount = 1
-  @State private var sleepTimeMessage = ""
+  var sleepTimeMessage: String {
+    calculateBedtime()
+  }
   
   var body: some View {
     NavigationView {
@@ -31,9 +33,9 @@ struct BetterRest: View {
           }
           .labelsHidden()
           .datePickerStyle(WheelDatePickerStyle())
-          .onReceive([self.$wakeUp].publisher.first()) { (_) in
-            self.sleepTimeMessage = self.calculateBedtime()
-          }
+//          .onReceive([self.$wakeUp].publisher.first()) { (_) in
+//            self.sleepTimeMessage = self.calculateBedtime()
+//          }
         }
         
         VStack(alignment: .leading, spacing: 0) {
@@ -43,9 +45,9 @@ struct BetterRest: View {
           Stepper(value: $sleepAmount, in: 4...12, step: 0.25) {
             Text("\(sleepAmount, specifier: "%g") hours")
           }
-          .onReceive([self.$sleepAmount].publisher.first()) { _ in
-            self.sleepTimeMessage = self.calculateBedtime()
-          }
+//          .onReceive([self.$sleepAmount].publisher.first()) { _ in
+//            self.sleepTimeMessage = self.calculateBedtime()
+//          }
         }
         
         VStack(alignment: .leading, spacing: 0) {
@@ -64,9 +66,9 @@ struct BetterRest: View {
             }
               .pickerStyle(WheelPickerStyle())
               .labelsHidden()
-              .onReceive([self.$sleepAmount].publisher.first()) { _ in
-                self.sleepTimeMessage = self.calculateBedtime()
-              }
+//              .onReceive([self.$sleepAmount].publisher.first()) { _ in
+//                self.sleepTimeMessage = self.calculateBedtime()
+//              }
             Spacer()
           }
         }

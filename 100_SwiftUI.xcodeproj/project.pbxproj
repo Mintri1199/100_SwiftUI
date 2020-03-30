@@ -19,6 +19,7 @@
 		4495E43F242DE1730042D3C8 /* RPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495E43E242DE1730042D3C8 /* RPS.swift */; };
 		4495E441242F0A970042D3C8 /* BetterRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495E440242F0A970042D3C8 /* BetterRest.swift */; };
 		4495E443242F21930042D3C8 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4495E442242F21930042D3C8 /* SleepCalculator.mlmodel */; };
+		4495E44524308F310042D3C8 /* WordScramble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495E44424308F310042D3C8 /* WordScramble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4495E43E242DE1730042D3C8 /* RPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPS.swift; sourceTree = "<group>"; };
 		4495E440242F0A970042D3C8 /* BetterRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterRest.swift; sourceTree = "<group>"; };
 		4495E442242F21930042D3C8 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
+		4495E44424308F310042D3C8 /* WordScramble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScramble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				4495E43C242DCECA0042D3C8 /* ViewsAndModifiers.swift */,
 				4495E43E242DE1730042D3C8 /* RPS.swift */,
 				4495E440242F0A970042D3C8 /* BetterRest.swift */,
+				4495E44424308F310042D3C8 /* WordScramble.swift */,
 				4495E42A242D24680042D3C8 /* Assets.xcassets */,
 				4495E42F242D24680042D3C8 /* LaunchScreen.storyboard */,
 				4495E432242D24680042D3C8 /* Info.plist */,
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4495E44524308F310042D3C8 /* WordScramble.swift in Sources */,
 				4495E443242F21930042D3C8 /* SleepCalculator.mlmodel in Sources */,
 				4495E43B242DADE50042D3C8 /* ChooseTheFlag.swift in Sources */,
 				4495E439242D7E710042D3C8 /* WeSplit.swift in Sources */,
