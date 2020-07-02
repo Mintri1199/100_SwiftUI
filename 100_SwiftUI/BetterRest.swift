@@ -23,6 +23,8 @@ struct BetterRest: View {
         VStack(alignment: .leading, spacing: 0) {
           Text("Your ideal sleep time: \(sleepTimeMessage)")
             .font(.title)
+            .minimumScaleFactor(0.2)
+            .lineLimit(1)
         }
         VStack(alignment: .leading, spacing: 0) {
           Text("When do you want to wake up?")
@@ -113,6 +115,6 @@ struct BetterRest: View {
 
 struct BetterRest_Previews: PreviewProvider {
   static var previews: some View {
-    BetterRest()
+      BetterRest()
   }
 }
