@@ -10,10 +10,11 @@ import SwiftUI
 
 
 struct WordScramble: View {
+  @State private var allwords = [String]()
   @State private var usedWords = [String]()
   @State private var rootWord = ""
   @State private var newWord = ""
-  
+  @State private var currentScore = 0
   @State private var errorTitle = ""
   @State private var errorMessage = ""
   @State private var showingError = false
@@ -26,12 +27,15 @@ struct WordScramble: View {
           .autocapitalization(.none)
           .padding()
         
+        Text("Current Score: \(currentScore)")
+        
         List(usedWords, id: \.self) {
           Text($0)
         }
         .listStyle(PlainListStyle())
      }
       .navigationBarTitle(rootWord)
+      .navigationBarItems(leading: Button("Restart", action: restartGame))
     }
     .onAppear(perform: startGame)
     .alert(isPresented: $showingError) {
@@ -62,15 +66,21 @@ struct WordScramble: View {
       return
     }
     
+    guard rootWord != answer else {
+      wordError(title: "Root word used", message: "You can't use the root word")
+      return
+    }
+    
     usedWords.insert(answer, at: 0)
     newWord = ""
+    currentScore += 1
   }
   
   func startGame() {
     if let wordsURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
       if let words = try? String(contentsOf: wordsURL) {
-        let allWords = words.components(separatedBy: "\n")
-        rootWord = allWords.randomElement() ?? "silkworm"
+        allwords = words.components(separatedBy: "\n")
+        rootWord = allwords.randomElement() ?? "silkworm"
         return
       }
     }
@@ -96,6 +106,11 @@ struct WordScramble: View {
   }
   
   func isRealWord(word: String) -> Bool {
+    
+    if word.count < 3 {
+      return false
+    }
+    
     let checker = UITextChecker()
     let range = NSRange(location: 0, length: word.utf16.count)
     
@@ -104,12 +119,17 @@ struct WordScramble: View {
     return misspelledRange.location == NSNotFound
   }
   
+  func restartGame() {
+    usedWords = []
+    rootWord = allwords.randomElement() ?? "silkworm"
+    currentScore = 0
+  }
+  
   func wordError(title: String, message: String) {
     errorTitle = title
     errorMessage = message
     showingError = true
   }
-  
 }
  
 struct WordScramble_Preview: PreviewProvider {
