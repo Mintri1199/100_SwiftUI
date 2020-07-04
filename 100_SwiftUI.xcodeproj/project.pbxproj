@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		446A96EF24AE89DD003F11A4 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446A96EE24AE89DD003F11A4 /* Animation.swift */; };
+		446A96F124B07BB6003F11A4 /* IExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446A96F024B07BB6003F11A4 /* IExpense.swift */; };
 		447B226D24AD46540067BA54 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 447B226C24AD46540067BA54 /* words.txt */; };
 		4495E425242D24630042D3C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495E424242D24630042D3C8 /* AppDelegate.swift */; };
 		4495E427242D24630042D3C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4495E426242D24630042D3C8 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		446A96EE24AE89DD003F11A4 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		446A96F024B07BB6003F11A4 /* IExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IExpense.swift; sourceTree = "<group>"; };
 		447B226C24AD46540067BA54 /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		4495E421242D24630042D3C8 /* 100_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 100_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4495E424242D24630042D3C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				4495E43A242DADE50042D3C8 /* ChooseTheFlag.swift */,
 				4495E43C242DCECA0042D3C8 /* ViewsAndModifiers.swift */,
 				4495E43E242DE1730042D3C8 /* RPS.swift */,
+				446A96F024B07BB6003F11A4 /* IExpense.swift */,
 				4495E440242F0A970042D3C8 /* BetterRest.swift */,
 				4495E44424308F310042D3C8 /* WordScramble.swift */,
 				446A96EE24AE89DD003F11A4 /* Animation.swift */,
@@ -180,6 +183,7 @@
 				446A96EF24AE89DD003F11A4 /* Animation.swift in Sources */,
 				4495E439242D7E710042D3C8 /* WeSplit.swift in Sources */,
 				4495E425242D24630042D3C8 /* AppDelegate.swift in Sources */,
+				446A96F124B07BB6003F11A4 /* IExpense.swift in Sources */,
 				4495E43D242DCECA0042D3C8 /* ViewsAndModifiers.swift in Sources */,
 				4495E43F242DE1730042D3C8 /* RPS.swift in Sources */,
 				4495E427242D24630042D3C8 /* SceneDelegate.swift in Sources */,
