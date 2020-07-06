@@ -72,20 +72,24 @@ struct IExpenseView: View {
             
             Spacer()
             Text("$\(item.amount)")
+              .foregroundColor( (item.amount < 10 && item.amount < 100) ? Color.black : Color.red)
+              .background(item.amount > 100 ? Color.orange : nil)
           }
-          
           
         }.onDelete(perform: removeItems)
       }
       
       .navigationBarTitle("iExpense")
-      .navigationBarItems(trailing:
+      .navigationBarItems(leading: EditButton(),
+                          trailing:
                             Button(action: {
                               self.showingAddExpense = true
                             }, label: {
                               Image(systemName: "plus")
                             })
+                          
       )
+      
     }.sheet(isPresented: $showingAddExpense) {
       AddView(expenses: self.expenses)
     }
